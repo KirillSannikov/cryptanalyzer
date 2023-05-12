@@ -7,10 +7,11 @@ public class BruteForce {
         if (n < 0) return n % modulus + modulus;
         return n % modulus;
     }
-    public static void textBruteForce(){
+
+    public static void textBruteForce() {
         Scanner console = new Scanner(System.in);
         System.out.println("Введите зашифрованный текст, для взлома методом brute force ");
-        String line3 = console.next();
+        String line3 = console.nextLine();
         console.close();
         String letter3 = "";
         char[] symbol3 = new char[line3.length()];
@@ -44,9 +45,13 @@ public class BruteForce {
 
             }
 
-            System.out.println("Расшифровка текста " + letter3 + " c ключом " + key3 + ": ");
+            System.out.print("Расшифровка текста " + line3 + "\n" + " c ключом " + key3 + ": ");
             System.out.println(symbol3);
             key3++;
+
+
+
+
+            }
         }
     }
-}
