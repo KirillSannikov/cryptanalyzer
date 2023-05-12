@@ -27,11 +27,16 @@ public class ImplementationCipher {
                     case 1 -> EnteredTextEncryption.enteredText();
                     case 2 -> DefaultEncryption.textDefault();
                     default -> System.out.print("Неверный ввод");
-                };
-                break;
+                }
 
-            case 2: TextTranscription.Transcription();
-            case 3: BruteForce.textBruteForce();
+            break;
+
+            case 2:
+                TextTranscription.Transcription();
+                break;
+            case 3:
+                BruteForce.textBruteForce();
+                break;
             default: System.out.print("Неверный ввод");
 
         }

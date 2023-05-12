@@ -14,8 +14,8 @@ public class EnteredTextEncryption {
         scanner.close();
 
         String letter = "";
-        int modifiedLetter = 0;
-        int letterFormula = 0;
+        int modifiedLetter;
+        int letterFormula;
 
         for (int j = 0; j < consoleText.length(); j++) {
             int a = consoleText.charAt(j);

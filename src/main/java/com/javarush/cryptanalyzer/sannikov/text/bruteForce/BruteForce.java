@@ -9,14 +9,14 @@ public class BruteForce {
     }
     public static void textBruteForce(){
         Scanner console = new Scanner(System.in);
-        System.out.print("Введите зашифрованный текст, для взлома методом brute force ");
+        System.out.println("Введите зашифрованный текст, для взлома методом brute force ");
         String line3 = console.next();
         console.close();
         String letter3 = "";
         char[] symbol3 = new char[line3.length()];
 
         int key3 = 1;
-        while (key3 != 98) {
+        while (key3 != 33) {
 
             for (int i = 0; i < line3.length(); i++) {
                 int a = line3.charAt(i);
@@ -44,7 +44,7 @@ public class BruteForce {
 
             }
 
-            System.out.print("Расшифровка текста " + line3 + " c ключом " + key3 + ": ");
+            System.out.println("Расшифровка текста " + letter3 + " c ключом " + key3 + ": ");
             System.out.println(symbol3);
             key3++;
         }

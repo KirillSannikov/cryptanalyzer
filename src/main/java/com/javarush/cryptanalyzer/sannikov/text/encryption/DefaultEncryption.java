@@ -25,8 +25,8 @@ public class DefaultEncryption {
         int key1 = console.nextInt();
         console.close();
         String letter1 = "";
-        int modifiedLetter1 = 0;
-        int letterFormula1 = 0;
+        int modifiedLetter1;
+        int letterFormula1;
 
         for (int j = 0; j < text.length(); j++) {
             int a = text.charAt(j);
