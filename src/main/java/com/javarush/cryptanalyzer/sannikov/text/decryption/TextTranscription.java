@@ -1,6 +1,7 @@
 package com.javarush.cryptanalyzer.sannikov.text.decryption;
 
 import com.javarush.cryptanalyzer.sannikov.cipherCaesar.ImplementationCipher;
+import com.javarush.cryptanalyzer.sannikov.constants.ConstDecoding;
 
 import java.util.Scanner;
 
@@ -10,13 +11,14 @@ public class TextTranscription {
         return n % modulus;
     }
 
-    public static void Transcription(){
+    public static void decoding(){
 
+        ConstDecoding constDecoding = new ConstDecoding();
         Scanner console = new Scanner(System.in);
         String letter1 = "";
-        System.out.println("Введите текст для расшифрования ");
+        System.out.println(constDecoding.enterText);
         String line1 = console.next();
-        System.out.println("Введите ключ ");
+        System.out.println(constDecoding.enterKey);
         int key = console.nextInt();
         console.close();
 
@@ -48,6 +50,6 @@ public class TextTranscription {
 
         }
 
-        System.out.println("Расшифрованный текст: " + letter1);
+        System.out.println(constDecoding.decipheredText + letter1);
     }
 }

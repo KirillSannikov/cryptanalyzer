@@ -1,5 +1,6 @@
 package com.javarush.cryptanalyzer.sannikov.text.encryption;
 
+import com.javarush.cryptanalyzer.sannikov.constants.constForEncryption.ConstDefaultText;
 import com.javarush.cryptanalyzer.sannikov.exception.FileException;
 
 import java.io.BufferedReader;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class DefaultEncryption {
     public static void textDefault(){
+        ConstDefaultText constDefaultText = new ConstDefaultText();
         String text = "";
 
         try (BufferedReader bufferedWriter = new BufferedReader(new FileReader("C:\\Users\\user\\IdeaProjects\\cryptanalyzer\\src\\main\\java\\com\\javarush\\cryptanalyzer\\sannikov\\file\\input.txt"))) {
@@ -16,11 +18,11 @@ public class DefaultEncryption {
                 text = bufferedWriter.readLine();
             }
         } catch (FileException | IOException e) {
-            System.out.println("пустой файл" + e.getMessage());
+            System.out.println(constDefaultText.exceptionFile + e.getMessage());
         }
 
-        System.out.println("Текст выбран по умолчанию");
-        System.out.println("Введите ключ ");
+        System.out.println(constDefaultText.defaultText);
+        System.out.println(constDefaultText.enterKey);
         Scanner console = new Scanner(System.in);
         int key1 = console.nextInt();
         console.close();

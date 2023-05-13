@@ -1,15 +1,18 @@
 package com.javarush.cryptanalyzer.sannikov.text.encryption;
 
+import com.javarush.cryptanalyzer.sannikov.constants.constForEncryption.ConstEnteredText;
+
 import java.util.Scanner;
 
 public class EnteredTextEncryption {
     public static void enteredText(){
 
-        System.out.println("Введите текст: ");
+        ConstEnteredText constEnteredText = new ConstEnteredText();
+        System.out.println(constEnteredText.enterText);
         Scanner scanner = new Scanner(System.in);
         String consoleText = scanner.nextLine();
 
-        System.out.println("Введите ключ ");
+        System.out.println(constEnteredText.enterKey);
         int key = scanner.nextInt();
         scanner.close();
 

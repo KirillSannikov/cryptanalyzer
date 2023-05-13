@@ -1,5 +1,7 @@
 package com.javarush.cryptanalyzer.sannikov.text.bruteForce;
 
+import com.javarush.cryptanalyzer.sannikov.constants.ConstBruteForce;
+
 import java.util.Scanner;
 
 public class BruteForce {
@@ -9,12 +11,14 @@ public class BruteForce {
     }
 
     public static void textBruteForce() {
+        ConstBruteForce constBruteForce = new ConstBruteForce();
         Scanner console = new Scanner(System.in);
-        System.out.println("Введите зашифрованный текст, для взлома методом brute force ");
+        System.out.println(constBruteForce.enterText);
         String line3 = console.nextLine();
         console.close();
         String letter3 = "";
         char[] symbol3 = new char[line3.length()];
+        System.out.println(constBruteForce.encryptionText + line3);
 
         int key3 = 1;
         while (key3 != 33) {
@@ -45,8 +49,10 @@ public class BruteForce {
 
             }
 
-            System.out.print("Расшифровка текста " + line3 + "\n" + " c ключом " + key3 + ": ");
+            System.out.print(constBruteForce.decryptionText + key3 + ": ");
+            System.out.println();
             System.out.println(symbol3);
+            System.out.println();
             key3++;
 
 
