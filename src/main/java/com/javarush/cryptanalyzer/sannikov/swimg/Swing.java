@@ -1,14 +1,29 @@
 package com.javarush.cryptanalyzer.sannikov.swimg;
 
 import com.javarush.cryptanalyzer.sannikov.constants.ConstImplementationCipher;
+import com.javarush.cryptanalyzer.sannikov.text.encryption.DefaultEncryption;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class Swing extends JFrame {
 
     public static void swingStart() {
         JFrame frame = new JFrame("Секретный текст");
+        String courses[] = {"","Засшифровать","BruteForce"};
+        JComboBox comboBox = new JComboBox(courses);
+        comboBox.setBounds(40,40,150,20);
+
+        for (int i = 0; i < courses.length ;i++) {
+            if (courses[i] == "Расшифровать"){
+                DefaultEncryption.textDefault();
+
+            }
+        }
+
+
+
         JButton button = new JButton("Enter");
         JButton button1 = new JButton("Расшифровать");
         JButton button2 = new JButton("Засшифровать");
