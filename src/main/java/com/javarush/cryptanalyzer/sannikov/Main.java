@@ -8,13 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //ImplementationCipher.cipher();
-        try{
-            FileOutputStream fout=new FileOutputStream("testout.txt");
-            fout.write(65);
-            fout.close();
-            System.out.println("success...");
-        }catch(Exception e){System.out.println(e);}
+        ImplementationCipher.cipher();
 
     }
 }
