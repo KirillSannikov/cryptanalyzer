@@ -13,7 +13,7 @@ public class DefaultEncryption {
         ConstDefaultText constDefaultText = new ConstDefaultText();
         String text = "";
 
-        try (BufferedReader bufferedWriter = new BufferedReader(new FileReader("C:\\Users\\user\\IdeaProjects\\cryptanalyzer\\src\\main\\java\\com\\javarush\\cryptanalyzer\\sannikov\\file\\input.txt"))) {
+        try (BufferedReader bufferedWriter = new BufferedReader(new FileReader("input.txt"))) {
             while (bufferedWriter.ready()) {
                 text = bufferedWriter.readLine();
             }
