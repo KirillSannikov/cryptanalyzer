@@ -3,9 +3,7 @@ package com.javarush.cryptanalyzer.sannikov.text.encryption;
 import com.javarush.cryptanalyzer.sannikov.constants.constForEncryption.ConstDefaultText;
 import com.javarush.cryptanalyzer.sannikov.exception.FileException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class DefaultEncryption {
@@ -21,7 +19,7 @@ public class DefaultEncryption {
             System.out.println(constDefaultText.exceptionFile + e.getMessage());
         }
 
-        System.out.println(constDefaultText.defaultText);
+        System.out.println(constDefaultText.Text);
         System.out.println(constDefaultText.enterKey);
         Scanner console = new Scanner(System.in);
         int key1 = console.nextInt();
@@ -59,9 +57,20 @@ public class DefaultEncryption {
                 letter1 += (char) letterFormula1;
             }
         }
-        System.out.println(letter1);
+        System.out.println();
+
+        try{
+         FileWriter fileWriter =new FileWriter("cipherTextDefault.txt");
+         fileWriter.write(letter1);
+         fileWriter.close();
+         System.out.println("Готово");
+         System.out.println("Текст зашифрован с ключом " + key1);
+
+         System.out.println("Зашифрованный текст находится в файле cipherTextDefault.txt");
+         } catch(Exception e){
+            System.out.println("Не получилось зашифровать");
+        }
 
     }
-
 
 }

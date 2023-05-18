@@ -2,6 +2,7 @@ package com.javarush.cryptanalyzer.sannikov.text.encryption;
 
 import com.javarush.cryptanalyzer.sannikov.constants.constForEncryption.ConstEnteredText;
 
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class EnteredTextEncryption {
@@ -49,7 +50,19 @@ public class EnteredTextEncryption {
                 letter += (char) letterFormula;
             }
         }
-        System.out.println(letter);
+        System.out.println();
+
+        try{
+            FileWriter fileWriter =new FileWriter("cipherTextEntered.txt");
+            fileWriter.write(letter);
+            fileWriter.close();
+            System.out.println("Готово");
+            System.out.println("Текст зашифрован с ключом " + key);
+
+            System.out.println("Зашифрованный текст находится в файле cipherEnteredText.txt");
+        } catch(Exception e){
+            System.out.println("Не получилось зашифровать");
+        }
 
     }
 }
